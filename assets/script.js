@@ -27,15 +27,24 @@ function getWeather() {
           var uvi_current = data.current.uvi;
           console.log(uvi_current)
           var weather_current_icon = data.current.weather[0].icon;
+          var day2_icon = data.daily[0].weather[0].icon;
+          var day3_icon = data.daily[1].weather[0].icon;
+          var day4_icon = data.daily[2].weather[0].icon;
+          var day5_icon = data.daily[3].weather[0].icon;
+          var day6_icon = data.daily[4].weather[0].icon;
           var iconUrl = "http://openweathermap.org/img/w/" + weather_current_icon + ".png";
-          console.log(weather_current_icon);  
+          var iconurl1 = "http://openweathermap.org/img/w/" + day2_icon + ".png";
+          var iconurl2 = "http://openweathermap.org/img/w/" + day3_icon + ".png";
+          var iconurl3 = "http://openweathermap.org/img/w/" + day4_icon + ".png";
+          var iconurl4 = "http://openweathermap.org/img/w/" + day5_icon + ".png";
+          var iconurl5 = "http://openweathermap.org/img/w/" + day6_icon + ".png";
+          
           var i;
           
           var new_day = [];
           var new_temp = [];
           var new_humid = [];
           var new_wind =[];
-          var new_icon =[];
             
           for ( i=0; i < 6 ; i ++) {
             var nextDat = (data.daily[i].dt) * 1000 ;
@@ -48,12 +57,13 @@ function getWeather() {
             var nextTemp = data.daily[i].temp.max;
             var nextHumid = data.daily[i].humidity;
             var nextWind = data.daily[i].wind_speed;
-            var nextIcon = data.daily.weather[i].icon;
             new_day.push(days);
             new_temp.push(nextTemp);
             new_humid.push(nextHumid);
-            new_wind.push(nextWind);    
+            new_wind.push(nextWind);   
           }
+          
+          
  
           $("#temp").append(temp_current + "°");
           $("#wind").append(wind_current);
@@ -61,6 +71,12 @@ function getWeather() {
           $("#uvi").append(uvi_current);
           $("#name_city").append(city);
           $("#wicon").attr('src',iconUrl);
+          $("#wicon1").attr('src',iconurl1);
+          $("#wicon2").attr('src',iconurl2);
+          $("#wicon3").attr('src',iconurl3);
+          $("#wicon4").attr('src',iconurl4);
+          $("#wicon5").attr('src',iconurl5);
+
           $("#day1").append(new_day[0]);
           $("#day2").append(new_day[1]);
           $("#day3").append(new_day[2]);
