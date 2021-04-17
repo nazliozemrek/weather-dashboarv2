@@ -3,7 +3,7 @@ function getWeather() {
 
     var city = $("#search").val();
     $(".list-cities").append('<li class="list-group-item bg-secondary " id="list-group-item">' + city + '</li>');
-    
+    $("#main").append(city);
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5eb2283c45fd1aa94d90b63b098aac2b`
@@ -65,9 +65,9 @@ function getWeather() {
           
           
  
-          $("#temp").append(temp_current + "°");
-          $("#wind").append(wind_current);
-          $("#humidity").append(humidty_current + '%');
+          $("#temp").append(temp_current + " °F");
+          $("#wind").append(wind_current + " MPH");
+          $("#humidity").append(humidty_current + ' %');
           $("#uvi").append(uvi_current);
           $("#name_city").append(city);
           $("#wicon").attr('src',iconUrl);
@@ -83,21 +83,21 @@ function getWeather() {
           $("#day4").append(new_day[3]);
           $("#day5").append(new_day[4]);
           $("#day6").append(new_day[5]);
-          $("#t1").append(new_temp[1]);
-          $("#h1").append(new_humid[1]);
-          $("#w1").append(new_wind[1]);
-          $("#t2").append(new_temp[2]);
-          $("#h2").append(new_humid[2]);
-          $("#w2").append(new_wind[2]);
-          $("#t3").append(new_temp[3]);
-          $("#h3").append(new_humid[3]);
-          $("#w3").append(new_wind[3]);
-          $("#t4").append(new_temp[4]);
-          $("#h4").append(new_humid[4]);
-          $("#w4").append(new_wind[4]);
-          $("#t5").append(new_temp[5]);
-          $("#h5").append(new_humid[5]);
-          $("#w5").append(new_wind[5]);
+          $("#t1").append(new_temp[1]+ " °F");
+          $("#h1").append(new_humid[1]+"MPH");
+          $("#w1").append(new_wind[1]+ ' %');
+          $("#t2").append(new_temp[2]+ " °F");
+          $("#h2").append(new_humid[2]+"MPH");
+          $("#w2").append(new_wind[2]+ ' %');
+          $("#t3").append(new_temp[3]+ " °F");
+          $("#h3").append(new_humid[3]+"MPH");
+          $("#w3").append(new_wind[3]+ ' %');
+          $("#t4").append(new_temp[4]+ " °F");
+          $("#h4").append(new_humid[4]+"MPH");
+          $("#w4").append(new_wind[4]+ ' %');
+          $("#t5").append(new_temp[5]+ " °F");
+          $("#h5").append(new_humid[5]+"MPH");
+          $("#w5").append(new_wind[5]+ ' %');
          
 
         })
