@@ -3,6 +3,9 @@ li {
     font-size: 18px;
     margin-top: 10px;
 }
+button {
+    margin-top: 10px;
+}
 .col  {
     height: 60px;
     background-image: linear-gradient(to left, rgba(6, 33, 83, 0), rgb(0, 84, 122));
