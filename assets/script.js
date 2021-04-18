@@ -1,9 +1,11 @@
 function getWeather() {
   $("#searchbtn").click(function () {
-
+    
     var city = $("#search").val();
     $(".list-cities").append('<li class="list-group-item bg-secondary " id="list-group-item">' + city + '</li>');
     $("#main").append(city);
+    localStorage.setItem("city",city)
+   
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5eb2283c45fd1aa94d90b63b098aac2b`
@@ -105,6 +107,7 @@ function getWeather() {
   })
 
 }
+
 
 
 getWeather();
