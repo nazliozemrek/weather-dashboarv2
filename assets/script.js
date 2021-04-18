@@ -3,7 +3,7 @@ function getWeather() {
     
     var city = $("#search").val();
     $(".list-cities").append('<li class="list-group-item bg-secondary " id="list-group-item">' + city + '</li>');
-    event.pereventDefault();
+    
     $("#main").append(city);
     localStorage.setItem("city",city)
    
